@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/shjyy1983/react_ts_basic/issues"
   },
-  "homepage": "https://github.com/shjyy1983/react_ts_basic#readme"
+  "homepage": "https://github.com/shjyy1983/react_ts_basic#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
 }
