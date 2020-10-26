@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "basic project",
   "main": "dist/components.js",
-  "types": "index.d.ts",
+  "types": "types/index.d.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js",
