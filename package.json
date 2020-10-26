@@ -1,0 +1,22 @@
+{
+  "name": "react_ts_basic",
+  "version": "0.0.1",
+  "description": "basic project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello world\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shjyy1983/react_ts_basic.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "SHEN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shjyy1983/react_ts_basic/issues"
+  },
+  "homepage": "https://github.com/shjyy1983/react_ts_basic#readme"
+}
