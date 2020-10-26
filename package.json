@@ -1,6 +1,6 @@
 {
   "name": "@shenorgtest/react_ts_basic",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "basic project",
   "main": "dist/components.js",
   "types": "index.d.ts",
