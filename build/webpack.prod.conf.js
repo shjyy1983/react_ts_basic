@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-26 13:52:18
+ * @Last Modified time: 2020-10-26 21:03:00
  */
 
 'use strict'
@@ -17,7 +17,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 引入清除�
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   entry: {
-    MyBox: ["./src/index.ts"]
+    components: ["./src/index.ts"]
   },
   devtool: false,
   output: {
