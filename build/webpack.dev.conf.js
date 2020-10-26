@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-26 10:29:53
+ * @Last Modified time: 2020-10-26 13:41:44
  */
 'use strict'
 const webpack = require('webpack')
@@ -22,7 +22,7 @@ const PORT = process.env.PORT && Number(process.env.PORT) // 读取系统环境�
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   entry: {
-    app: ["./demo/app.tsx"]
+    app: ["./src/app.tsx"]
   },
   devtool: config.dev.devtool,
   devServer: {
@@ -47,7 +47,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      title: 'React_TS',
+      title: 'react_ts',
       template: "index.ejs",
       filename: "index.html",
       isProdEnv: false,
