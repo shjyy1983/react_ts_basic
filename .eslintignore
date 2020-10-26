@@ -3,3 +3,4 @@
 /.*.js
 /*.ejs
 /*.config.js
+/types

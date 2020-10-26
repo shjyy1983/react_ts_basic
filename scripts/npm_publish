@@ -1,0 +1,40 @@
+# 发布确认
+read -p "是否要发布？输入 yes 进行发布。(yes/n): " check
+
+if [ "$check"x == 'yes'x ]
+then
+  echo '准备发布...(等待 5s，期间可以 ctrl+c 进行强制退出任务)'
+  sleep 5
+else
+  echo '退出'
+  exit 0
+fi
+
+
+read -p "输入修改评论: " remark
+
+# 发布
+echo '发布中...'
+
+echo -e '========================'
+echo '切换到 dev 分支，提交代码'
+git checkout dev
+git add .
+git commit -m "$remark"
+npm version patch
+git push origin dev
+
+echo -e '\n\n========================'
+echo '切换到 master 分支，合并代码，提交代码'
+git checkout master
+git merge dev
+git push origin master
+git push --tags
+npm publish --access public
+
+echo -e '\n\n========================'
+echo '切换到 dev 分支'
+git checkout dev
+
+echo -e '\n\n========================'
+echo '完毕'

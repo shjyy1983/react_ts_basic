@@ -1,0 +1,37 @@
+# 删除所有的本地 tag 和远端 tag
+
+# 删除确认
+read -p "是否要删除所有的本地和远端 tag？删除后无法恢复。(yes/n): " check
+
+if [ "$check"x == 'yes'x ]
+then
+  echo '准备删除...(等待 5s，期间可以 ctrl+c 进行强制退出任务)'
+  sleep 5
+else
+  echo '退出'
+  exit 0
+fi
+
+# 删除
+git checkout master
+for tag in $(git tag -l)
+  do
+    echo 删除远端tag: ${tag}
+    git push origin :refs/tags/${tag}
+  done
+
+echo 删除所有本地 master 分支tag
+for tag in $(git tag -l)
+  do
+    git tag -d ${tag}
+  done
+
+
+echo 删除所有本地dev分支tag
+git checkout dev
+for tag in $(git tag -l)
+  do
+    git tag -d ${tag}
+  done
+
+echo 完毕

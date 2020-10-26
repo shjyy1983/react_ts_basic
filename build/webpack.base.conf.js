@@ -2,11 +2,13 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-26 10:35:40
+ * @Last Modified time: 2020-10-26 21:54:42
  */
 'use strict'
 const path = require('path')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+
+console.log('process.env.NODE_ENV =====', process.env.NODE_ENV)
 
 module.exports = {
   context: path.resolve(__dirname, '..'),
@@ -27,7 +29,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: "ts-loader",
         options: {
-          transpileOnly: true,
+          transpileOnly: false,
           configFile: process.env.NODE_ENV === 'development' ? 'tsconfig.dev.json' : 'tsconfig.prod.json'
         }
       },

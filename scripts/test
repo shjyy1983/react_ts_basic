@@ -1,0 +1,19 @@
+# 发布确认
+read -p "是否要发布？输入 yes 进行发布。(y/n): " check
+
+if [ "$check"x == 'y'x ]
+then
+  echo '------>'
+else
+  echo '退出'
+  exit 0
+fi
+
+read -p "输入版本: " version
+echo "$version"
+if [ -z "$version" ]; then
+  echo '输入版本为空，退出。'
+  exit 0
+else
+  echo @shenorg/ss_cli@"$version"
+fi

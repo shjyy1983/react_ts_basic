@@ -1,0 +1,20 @@
+# 发布确认
+read -p "是取消 react-native-ss-bizview 中某个版本发布？(y/n): " check
+
+if [ "$check"x == 'y'x ]
+then
+  echo '继续..'
+else
+  echo '退出'
+  exit 0
+fi
+
+read -p "输入版本: " version
+echo "$version"
+if [ -z "$version" ]; then
+  echo '输入版本为空，退出。'
+  exit 0
+else
+  echo 正在取消发布版本：@shenorg/react-native-ss-bizview@"$version"
+  npm unpublish @shenorg/react-native-ss-bizview@"$version"
+fi

@@ -1,13 +1,15 @@
 {
-  "name": "react_ts_basic",
+  "name": "@shenorgtest/react_ts_basic",
   "version": "0.0.1",
   "description": "basic project",
-  "main": "index.js",
+  "main": "dist/components.js",
+  "types": "index.d.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js",
     "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src/**/*",
-    "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}"
+    "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}",
+    "dosome": "tsc --p tsconfig.prod.json"
   },
   "repository": {
     "type": "git",
