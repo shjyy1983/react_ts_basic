@@ -2,13 +2,11 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-26 21:54:42
+ * @Last Modified time: 2020-10-26 22:23:00
  */
 'use strict'
 const path = require('path')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-
-console.log('process.env.NODE_ENV =====', process.env.NODE_ENV)
 
 module.exports = {
   context: path.resolve(__dirname, '..'),
