@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-27 10:39:36
+ * @Last Modified time: 2020-10-27 11:30:09
  */
 
 'use strict'
@@ -39,7 +39,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CleanWebpackPlugin(),
   ],
   externals: {
-    // 'react': 'React',
+    'react': 'React',
     // '../../utils': 'utils'
   }
 })
