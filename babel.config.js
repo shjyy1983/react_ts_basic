@@ -13,7 +13,7 @@ const envPreset = [
 module.exports = function (api) {
   api.cache(true);
   return {
-      presets: ['@babel/preset-typescript', envPreset],
+      presets: ['@babel/preset-typescript', '@babel/preset-env' /*, envPreset */],
       plugins: [
           '@babel/plugin-transform-runtime',
           '@babel/plugin-syntax-dynamic-import',
