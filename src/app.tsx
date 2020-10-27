@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { HashRouter, BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import routes from "./router";
 

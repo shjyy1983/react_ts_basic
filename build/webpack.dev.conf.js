@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-26 13:41:44
+ * @Last Modified time: 2020-10-27 09:58:32
  */
 'use strict'
 const webpack = require('webpack')
@@ -14,7 +14,6 @@ const config = require('./config') // 基本配置的参数
 const baseWebpackConfig = require('./webpack.base.conf') // webpack基本配置文件（开发和生产环境公用部分）
 const merge = require('webpack-merge') // webpack-merge是一个可以合并数组和对象的插件
 const portfinder = require('portfinder') // 自动检索下一个可用端口
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin') // friendly-errors-webpack-plugin用于更友好地输出webpack的警告、错误等信息
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT) // 读取系统环境变量的port
@@ -28,7 +27,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
-    open: config.dev.autoOpenBrowser,
+    open: false,
     contentBase: false, // since we use CopyWebpackPlugin.
     hot: true, // 开启热模块加载
     quiet: true,
@@ -66,14 +65,6 @@ module.exports = new Promise((resolve, reject) => {
       process.env.PORT = port
       // add port to devServer config
       devWebpackConfig.devServer.port = port
-
-      // Add FriendlyErrorsPlugin
-      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-        compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
-        },
-        onErrors: true
-      }))
 
       resolve(devWebpackConfig)
     }

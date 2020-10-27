@@ -52,7 +52,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 'off',
     'import/extensions': 'off',
-    'no-use-before-define': 'warn',
+    'no-use-before-define': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off'
   },
