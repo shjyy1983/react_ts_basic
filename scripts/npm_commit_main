@@ -18,8 +18,6 @@ git checkout dev
 git add .
 git commit -m "$remark"
 git checkout main
-npm version patch
 git push origin main
-git push --tags
 git checkout dev
 

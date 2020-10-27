@@ -17,5 +17,4 @@ echo '切换到 dev 分支，提交代码'
 git checkout dev
 git add .
 git commit -m "$remark"
-npm version patch
 git push origin dev
