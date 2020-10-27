@@ -15,11 +15,11 @@ module.exports = function (api) {
   return {
       presets: ['@babel/preset-typescript', envPreset],
       plugins: [
-        //   '@babel/plugin-transform-runtime',
-        //   '@babel/plugin-syntax-dynamic-import',
-        //   '@babel/plugin-proposal-optional-chaining',
-        //   ['@babel/plugin-proposal-class-properties', { loose: true }],
-        //   ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+          '@babel/plugin-transform-runtime',
+          '@babel/plugin-syntax-dynamic-import',
+          '@babel/plugin-proposal-optional-chaining',
+          ['@babel/plugin-proposal-class-properties', { loose: true }],
+          ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
       ],
       env: {
           development: {
