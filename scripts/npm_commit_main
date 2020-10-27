@@ -1,0 +1,24 @@
+ # 提交确认
+read -p "是否要在main分支提交修改？(y/n): " check
+
+if [ "$check"x == 'y'x ]
+then
+  echo '准备提交...'
+else
+  echo '退出'
+  exit 0
+fi
+
+
+read -p "输入修改评论: " remark
+
+
+echo '切换到 main 分支，提交代码'
+git checkout dev
+git add .
+git commit -m "$remark"
+git checkout main
+npm version patch
+git push origin main
+git checkout dev
+
