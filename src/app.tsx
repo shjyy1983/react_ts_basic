@@ -22,4 +22,4 @@ function dosome(a: string): string {
 }
 
 
-console.log(dosome(222))
+console.log(dosome('abc'))

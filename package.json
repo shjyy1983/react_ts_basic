@@ -10,6 +10,7 @@
     "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src/**/*",
     "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}",
     "check-types-dev": "tsc -p tsconfig.dev.json",
+    "check-types-dev-watch": "tsc -p tsconfig.dev.json --watch",
     "check-types": "tsc -p tsconfig.prod.json"
   },
   "repository": {
