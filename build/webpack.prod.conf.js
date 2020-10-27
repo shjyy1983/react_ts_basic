@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-27 11:30:09
+ * @Last Modified time: 2020-10-27 11:37:57
  */
 
 'use strict'
@@ -26,7 +26,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     libraryTarget: 'umd'
   },
   optimization: {
-    minimize: false,
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         parallel: true,
