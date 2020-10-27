@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-27 11:37:57
+ * @Last Modified time: 2020-10-27 17:25:01
  */
 
 'use strict'
@@ -12,24 +12,26 @@ const merge = require('webpack-merge')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 引入清除文件插件
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   entry: {
     components: ["./src/index.ts"]
   },
-  devtool: false,
+  devtool: "source-map",
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    library: 'react_ts_basic'
   },
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
         parallel: true,
+        sourceMap: true,
         extractComments: false,
       }),
       new OptimizeCSSAssetsPlugin({})
@@ -39,11 +41,21 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CleanWebpackPlugin(),
   ],
   externals: {
-    'react': 'React',
+    'react': {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react'
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom'
+    }
     // '../../utils': 'utils'
   }
 })
-
 
 
 module.exports = webpackConfig

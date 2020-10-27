@@ -15,3 +15,11 @@ const render = () => {
   );
 };
 render();
+
+
+function dosome(a: string): string {
+  return `hello ${a}`;
+}
+
+
+console.log(dosome('abc'))

@@ -1,6 +1,10 @@
 {
   "name": "@shenorgtest/react_ts_basic",
+<<<<<<< HEAD
   "version": "0.0.14",
+=======
+  "version": "0.0.13",
+>>>>>>> dev
   "description": "basic project",
   "main": "dist/components.js",
   "types": "types/index.d.ts",
@@ -8,7 +12,10 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js",
     "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src/**/*",
-    "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}"
+    "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}",
+    "check-types-dev": "tsc -p tsconfig.dev.json",
+    "check-types-dev-watch": "tsc -p tsconfig.dev.json --watch",
+    "check-types": "tsc -p tsconfig.prod.json"
   },
   "repository": {
     "type": "git",
@@ -33,6 +40,7 @@
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@babel/plugin-proposal-optional-chaining": "^7.12.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-react-constant-elements": "^7.12.1",

@@ -2,19 +2,17 @@
  * @Author: SHEN
  * @Date: 2020-10-26 20:50:18
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-26 21:00:08
+ * @Last Modified time: 2020-10-27 21:17:14
  */
 import React from 'react'
 import './style.less'
 
-class BlueBox extends React.PureComponent {
-  render() {
-    return (
-      <div className="green-box">
-        blue box
-      </div>
-    )
-  }
+function BlueBox() {
+  return (
+    <div className="green-box">
+      blue box2
+    </div>
+  )
 }
 
 export default BlueBox
