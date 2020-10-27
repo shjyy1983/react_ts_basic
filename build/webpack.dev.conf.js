@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-27 09:58:32
+ * @Last Modified time: 2020-10-27 17:26:54
  */
 'use strict'
 const webpack = require('webpack')
@@ -23,7 +23,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   entry: {
     app: ["./src/app.tsx"]
   },
-  devtool: config.dev.devtool,
+  devtool: "eval-source-map",
   devServer: {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
