@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 10:46:34
+ * @Last Modified time: 2020-10-28 11:01:58
  */
 'use strict'
 const path = require('path')
@@ -59,7 +59,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[id].[contenthash].css'
+      filename: 'css/[name].css'
     })
   ],
   externals: {

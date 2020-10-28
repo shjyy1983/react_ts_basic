@@ -16,8 +16,11 @@ read -p "输入修改评论: " remark
 echo '发布中...'
 
 echo -e '========================'
-echo '切换到 dev 分支，提交代码'
+echo '切换到 dev 分支'
 git checkout dev
+echo '构建库...'
+npm run build
+echo '提交代码...'
 git add .
 git commit -m "$remark"
 npm version patch
