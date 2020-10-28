@@ -1,6 +1,6 @@
 {
   "name": "@shenorgtest/react_ts_basic",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "basic project",
   "main": "dist/components.js",
   "types": "types/index.d.ts",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/shjyy1983/react_ts_basic#readme",
   "dependencies": {
+    "lodash": "^4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-config": "^5.1.1",
