@@ -5,8 +5,6 @@
     "declarationDir": "./types",
   },
   "include": [
-    "./src/components/**/*",
-    "./src/utils/**/*",
-    "./scr/index.ts"
+    "./src/index.ts"
   ],
 }
