@@ -2,26 +2,28 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 10:46:34
+ * @Last Modified time: 2020-10-28 10:55:51
  */
 'use strict'
 const path = require('path')
 const config = require('./config')
 const baseWebpackConfig = require('./webpack.base.conf')
 const merge = require('webpack-merge')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   entry: {
-    components: ["./src/index.ts"]
+    app: ["./src/app.tsx"]
   },
   devtool: "source-map",
   output: {
-    path: config.build.assetsRoot,
+    path: path.resolve(__dirname, '../dist-demo'),
     filename: '[name].js',
     libraryTarget: 'umd',
     library: 'react_ts_basic'
@@ -60,28 +62,16 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[id].[contenthash].css'
-    })
-  ],
-  externals: {
-    'react': {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react'
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom'
-    },
-    'lodash': {
-      root: '_',
-      commonjs2: 'lodash',
-      commonjs: 'lodash',
-      amd: 'lodash',
-    }
-  }
+    }),
+    new HtmlWebPackPlugin({
+      title: 'react_ts',
+      template: "index.ejs",
+      filename: "index.html",
+      isProdEnv: false,
+      inject: true
+    }),
+    new BundleAnalyzerPlugin()
+  ]
 })
 
 module.exports = webpackConfig

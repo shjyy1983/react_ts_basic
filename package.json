@@ -1,11 +1,13 @@
 {
   "name": "@shenorgtest/react_ts_basic",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "basic project",
   "main": "dist/components.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
+    "dev": "npm run dev-demo",
+    "dev-demo": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.dev.conf.js",
+    "build-demo": "cross-env NODE_ENV=production webpack --config build/webpack.demo.prod.conf.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js",
     "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src/**/*",
     "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}",
