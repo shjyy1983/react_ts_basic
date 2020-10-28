@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 09:27:10
+ * @Last Modified time: 2020-10-28 10:07:08
  */
 
 'use strict'
@@ -53,7 +53,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       commonjs: 'react-dom',
       amd: 'react-dom'
     },
-    'lodash': 'lodash'
+    // 'lodash': {
+    //   root: '_',
+    //   commonjs2: 'lodash',
+    //   commonjs: 'lodash',
+    //   amd: 'lodash',
+    // }
     // '../../utils': 'utils'
   }
 })
