@@ -2,10 +2,12 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 10:47:10
+ * @Last Modified time: 2020-10-28 13:05:28
  */
 'use strict'
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 
 module.exports = {
   context: path.resolve(__dirname, '..'),
@@ -27,6 +29,21 @@ module.exports = {
           {
             loader: 'babel-loader',
           }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          (process.env.NODE_ENV === 'production' ?  MiniCssExtractPlugin.loader : 'style-loader'),
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          (process.env.NODE_ENV === 'production' ?  MiniCssExtractPlugin.loader : 'style-loader'),
+          'css-loader',
+          'less-loader'
         ]
       },
       {
