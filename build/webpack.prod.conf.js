@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-27 17:25:01
+ * @Last Modified time: 2020-10-28 09:27:10
  */
 
 'use strict'
@@ -27,7 +27,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     library: 'react_ts_basic'
   },
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new TerserPlugin({
         parallel: true,
@@ -52,7 +52,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       commonjs2: 'react-dom',
       commonjs: 'react-dom',
       amd: 'react-dom'
-    }
+    },
+    'lodash': 'lodash'
     // '../../utils': 'utils'
   }
 })
