@@ -2,14 +2,12 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 10:07:08
+ * @Last Modified time: 2020-10-28 10:23:30
  */
-
 'use strict'
 const config = require('./config')
 const baseWebpackConfig = require('./webpack.base.conf')
 const merge = require('webpack-merge')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -27,7 +25,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     library: 'react_ts_basic'
   },
   optimization: {
-    minimize: false,
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         parallel: true,
@@ -53,15 +51,13 @@ const webpackConfig = merge(baseWebpackConfig, {
       commonjs: 'react-dom',
       amd: 'react-dom'
     },
-    // 'lodash': {
-    //   root: '_',
-    //   commonjs2: 'lodash',
-    //   commonjs: 'lodash',
-    //   amd: 'lodash',
-    // }
-    // '../../utils': 'utils'
+    'lodash': {
+      root: '_',
+      commonjs2: 'lodash',
+      commonjs: 'lodash',
+      amd: 'lodash',
+    }
   }
 })
-
 
 module.exports = webpackConfig
