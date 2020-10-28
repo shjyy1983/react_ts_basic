@@ -1,6 +1,6 @@
 {
   "name": "@shenorgtest/react_ts_basic",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "basic project",
   "main": "dist/components.js",
   "types": "types/index.d.ts",
@@ -13,7 +13,8 @@
     "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.{css,less,scss}",
     "check-types-dev": "tsc -p tsconfig.dev.json",
     "check-types-dev-watch": "tsc -p tsconfig.dev.json --watch",
-    "check-types": "tsc -p tsconfig.prod.json"
+    "check-types": "tsc -p tsconfig.prod.json",
+    "publish": "npm run check-types && npm run build && ./scripts/npm_publish"
   },
   "repository": {
     "type": "git",
