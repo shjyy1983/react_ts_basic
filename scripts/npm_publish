@@ -3,8 +3,7 @@ read -p "是否要发布？输入 yes 进行发布。(yes/n): " check
 
 if [ "$check"x == 'yes'x ]
 then
-  echo '准备发布...(等待 5s，期间可以 ctrl+c 进行强制退出任务)'
-  sleep 5
+  echo '准备发布...'
 else
   echo '退出'
   exit 0
