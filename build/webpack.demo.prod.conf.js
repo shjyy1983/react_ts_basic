@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 10:55:51
+ * @Last Modified time: 2020-10-28 13:07:22
  */
 'use strict'
 const path = require('path')
@@ -37,25 +37,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         extractComments: false
       }),
       new OptimizeCSSAssetsPlugin({}),
-    ]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'less-loader'
-        ]
-      },
     ]
   },
   plugins: [
