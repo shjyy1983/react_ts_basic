@@ -1,5 +1,6 @@
 /build/
 /dist
+/dist-demo
 /.*.js
 /*.ejs
 /*.config.js
