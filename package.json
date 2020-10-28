@@ -53,6 +53,7 @@
     "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-dev-expression": "^0.2.2",
     "clean-webpack-plugin": "3.0.0",
@@ -80,6 +81,10 @@
     "less-loader": "^7.0.2",
     "mini-css-extract-plugin": "^1.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.4",
+    "postcss-loader": "^4.0.4",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-short": "^5.0.0",
     "prettier": "^2.1.2",
     "react-hot-loader": "^4.13.0",
     "style-loader": "^2.0.0",
@@ -104,5 +109,10 @@
   "files": [
     "dist",
     "types"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
   ]
 }

@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 12:03:31
+ * @Last Modified time: 2020-10-28 21:18:21
  */
 'use strict'
 const webpack = require('webpack')
@@ -43,25 +43,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     }
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader'
-        ]
-      },
-    ]
   },
   plugins: [
     new HtmlWebPackPlugin({

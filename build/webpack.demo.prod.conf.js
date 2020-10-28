@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-28 13:07:22
+ * @Last Modified time: 2020-10-28 22:24:10
  */
 'use strict'
 const path = require('path')
@@ -51,7 +51,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       isProdEnv: false,
       inject: true
     }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ]
 })
 
