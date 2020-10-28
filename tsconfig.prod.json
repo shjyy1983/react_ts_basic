@@ -6,6 +6,7 @@
   },
   "include": [
     "./src/components/**/*",
+    "./src/utils/**/*",
     "./scr/index.ts"
   ],
 }
