@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-10-27 21:39:43
+ * @Last Modified time: 2020-10-28 10:47:10
  */
 'use strict'
 const path = require('path')
@@ -27,21 +27,6 @@ module.exports = {
           {
             loader: 'babel-loader',
           }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader'
         ]
       },
       {
